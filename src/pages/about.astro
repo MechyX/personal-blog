@@ -1,6 +1,8 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { pathWithBase } from "../lib/url";
+import { relativeHref } from "../lib/url";
+
+const pathname = Astro.url.pathname;
 ---
 
 <BaseLayout title="About" description="About Rithesh and this blog.">
@@ -12,7 +14,7 @@ import { pathWithBase } from "../lib/url";
       <span aria-hidden="true">·</span>
       <span>rit6569 [at] gmail [dot] com</span>
       <span aria-hidden="true">·</span>
-      <a href={pathWithBase("/resume/rithesh-resume.pdf")} download>resume</a>
+      <a href={relativeHref(pathname, "/resume/rithesh-resume.pdf")} download>resume</a>
     </p>
     <p>
       I started working as a software engineer at a startup in 2022 while I was
