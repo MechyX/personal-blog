@@ -1,0 +1,18 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { formatPostDate, getPostSlug, getPublishedPosts } from "../lib/posts";
+import { pathWithBase } from "../lib/url";
+
+const posts = await getPublishedPosts();
+---
+
+<BaseLayout>
+  <section class="post-list" aria-label="posts">
+    {posts.map((post) => (
+      <a class="post-row" href={pathWithBase(`/posts/${getPostSlug(post.id)}/`)}>
+        <time datetime={post.data.pubDate.toISOString()}>{formatPostDate(post.data.pubDate)}</time>
+        <span>{post.data.title}</span>
+      </a>
+    ))}
+  </section>
+</BaseLayout>

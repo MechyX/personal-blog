@@ -1,0 +1,32 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { pathWithBase } from "../lib/url";
+---
+
+<BaseLayout title="About" description="About Rithesh and this blog.">
+  <article class="page prose">
+    <p class="contact-links" aria-label="contact links">
+      <a href="https://github.com/MechyX" rel="me">github</a>
+      <span aria-hidden="true">·</span>
+      <a href="https://www.linkedin.com/in/rithesh-sureshkumar/" rel="me">linkedin</a>
+      <span aria-hidden="true">·</span>
+      <span>rit6569 [at] gmail [dot] com</span>
+      <span aria-hidden="true">·</span>
+      <a href={pathWithBase("/resume/rithesh-resume.pdf")} download>resume</a>
+    </p>
+    <p>
+      I started working as a software engineer at a startup in 2022 while I was
+      still in college, and I have been a software engineer ever since.
+    </p>
+    <p>
+      I am generally interested in computer science, and I have a habit of
+      getting interested in completely unrelated things, whether that is sports,
+      science, politics, or something else entirely. I am also a strong
+      advocate for affordable AI.
+    </p>
+    <p>
+      Outside of that, I am a lifelong Manchester United supporter, play AAA
+      video games now and then, and sports/try to lift heavy.
+    </p>
+  </article>
+</BaseLayout>
