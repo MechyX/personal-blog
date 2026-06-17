@@ -1,4 +1,7 @@
 import { defineConfig } from "astro/config";
+import { unified } from "@astrojs/markdown-remark";
+import rehypeKatex from "rehype-katex";
+import remarkMath from "remark-math";
 
 const site = process.env.SITE ?? "https://rithesh.xyz";
 const base = process.env.BASE_PATH ?? "/";
@@ -6,5 +9,12 @@ const base = process.env.BASE_PATH ?? "/";
 export default defineConfig({
   site,
   base,
-  trailingSlash: "never"
+  trailingSlash: "ignore",
+  markdown: {
+    processor: unified({
+      smartypants: false,
+      remarkPlugins: [remarkMath],
+      rehypePlugins: [rehypeKatex]
+    })
+  }
 });
