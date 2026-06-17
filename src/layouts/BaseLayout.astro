@@ -8,7 +8,7 @@ interface Props {
 }
 
 const siteTitle = "Rithesh";
-const { title = siteTitle, description = "Notes on software, systems, and writing." } = Astro.props;
+const { title = siteTitle, description = "Personal site of Rithesh." } = Astro.props;
 const pageTitle = title === siteTitle ? title : `${title} - ${siteTitle}`;
 const pathname = Astro.url.pathname;
 ---
@@ -19,6 +19,9 @@ const pathname = Astro.url.pathname;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
     <title>{pageTitle}</title>
   </head>
   <body>
