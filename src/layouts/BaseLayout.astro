@@ -12,6 +12,8 @@ const siteTitle = "Rithesh";
 const { title = siteTitle, description = "Personal site of Rithesh." } = Astro.props;
 const pageTitle = title === siteTitle ? title : `${title} - ${siteTitle}`;
 const pathname = Astro.url.pathname;
+const isTechRoute = ["/", "/tech/"].some((route) => isCurrentRoute(pathname, route)) || pathname.startsWith("/posts/");
+const isNonTechRoute = isCurrentRoute(pathname, "/not-tech/");
 ---
 
 <!doctype html>
@@ -23,7 +25,8 @@ const pathname = Astro.url.pathname;
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Tech RSS Feed" href="/tech/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Not Tech RSS Feed" href="/not-tech/feed.xml" />
     <title>{pageTitle}</title>
     <!-- Google tag (gtag.js) -->
     <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-83Z2S74VEV"></script>
@@ -41,9 +44,9 @@ const pathname = Astro.url.pathname;
         <div class="site-title">Rithesh</div>
 
         <nav class="site-nav" aria-label="primary">
-          <a href={relativeHref(pathname, "/")} aria-current={isCurrentRoute(pathname, "/") ? "page" : undefined}>posts</a>
+          <a href={relativeHref(pathname, "/tech/")} aria-current={isTechRoute ? "page" : undefined}>tech</a>
+          <a href={relativeHref(pathname, "/not-tech/")} aria-current={isNonTechRoute ? "page" : undefined}>not tech</a>
           <a href={relativeHref(pathname, "/about/")} aria-current={isCurrentRoute(pathname, "/about/") ? "page" : undefined}>about</a>
-          <a href="/feed.xml" title="RSS Feed">subscribe</a>
         </nav>
       </header>
 

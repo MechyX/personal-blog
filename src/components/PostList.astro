@@ -1,0 +1,21 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { formatPostDate, getPostSlug } from "../lib/posts";
+import { relativeHref } from "../lib/url";
+
+interface Props {
+  posts: CollectionEntry<"posts">[];
+  pathname: string;
+}
+
+const { posts, pathname } = Astro.props;
+---
+
+<div class="post-list">
+  {posts.map((post) => (
+    <a class="post-row" href={relativeHref(pathname, `/posts/${getPostSlug(post.id)}/`)}>
+      <time datetime={post.data.pubDate.toISOString()}>{formatPostDate(post.data.pubDate)}</time>
+      <span>{post.data.title}</span>
+    </a>
+  ))}
+</div>

@@ -2,6 +2,7 @@
 title: "git init"
 description: "A small first note to mark the start of this site."
 pubDate: 2026-06-17
+section: software
 ---
 
 > Every personal site starts with a tiny act of pretending it is already real.

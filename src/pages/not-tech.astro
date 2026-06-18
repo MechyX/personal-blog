@@ -1,0 +1,19 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PostList from "../components/PostList.astro";
+import { getPublishedPosts } from "../lib/posts";
+
+const posts = await getPublishedPosts();
+const pathname = Astro.url.pathname;
+const sectionPosts = posts.filter((post) => post.data.section === "other");
+---
+
+<BaseLayout title="Not Tech" description="Non-technical posts by Rithesh.">
+  <div class="post-feed-scope">
+    <p class="feed-link"><a href="feed.xml" aria-label="not tech RSS feed">subscribe</a></p>
+
+    <section class="post-section" aria-label="not tech posts">
+      <PostList posts={sectionPosts} pathname={pathname} />
+    </section>
+  </div>
+</BaseLayout>
