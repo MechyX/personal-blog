@@ -3,7 +3,7 @@ import { getPublishedPosts } from "../../lib/posts";
 import { buildPostsFeed } from "../../lib/rss";
 
 export async function GET(context: APIContext) {
-  const posts = (await getPublishedPosts()).filter((post) => post.data.section === "other");
+  const posts = (await getPublishedPosts()).filter((post) => post.data.section === "not-tech");
 
   return buildPostsFeed({
     context,
