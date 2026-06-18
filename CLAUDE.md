@@ -5,6 +5,8 @@
 **Never open a pull request or merge without explicit approval from the user.**
 
 All changes should remain local until the user reviews and explicitly authorizes PR creation or merging.
+New changes must be published through a pull request; never push commits directly to `main` or `master`.
+Do not open a pull request for new changes until the user explicitly says to open one.
 
 ## General Guidelines
 
