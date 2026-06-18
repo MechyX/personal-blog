@@ -43,6 +43,7 @@ const pathname = Astro.url.pathname;
         <nav class="site-nav" aria-label="primary">
           <a href={relativeHref(pathname, "/")} aria-current={isCurrentRoute(pathname, "/") ? "page" : undefined}>posts</a>
           <a href={relativeHref(pathname, "/about/")} aria-current={isCurrentRoute(pathname, "/about/") ? "page" : undefined}>about</a>
+          <a href="/feed.xml" title="RSS Feed">subscribe</a>
         </nav>
       </header>
 
