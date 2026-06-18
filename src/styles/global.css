@@ -3,6 +3,7 @@
   --paper: #faf5ea;
   --ink: #151515;
   --muted: #4f473c;
+  --soft-muted: #7a6f60;
   --highlight: #b66a2b;
   --measure: 47rem;
 }
@@ -110,6 +111,33 @@ a:hover {
   opacity: 1;
 }
 
+.feed-link {
+  margin: -0.9rem 0 1.55rem;
+  color: var(--soft-muted);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+
+.feed-link a:hover {
+  text-decoration: underline;
+}
+
+.post-sections {
+  display: grid;
+  gap: 3.4rem;
+}
+
+.post-section h1 {
+  margin: 0 0 1.25rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
 .post-list {
   display: grid;
   gap: 2.05rem;
@@ -117,21 +145,21 @@ a:hover {
 
 .post-row {
   display: grid;
-  grid-template-columns: 10.5rem minmax(0, 1fr);
-  gap: 2.6rem;
-  align-items: baseline;
+  gap: 0.25rem;
 }
 
 .post-row time {
-  color: var(--muted);
+  color: var(--soft-muted);
   font-size: 0.92rem;
   letter-spacing: 0.03em;
   white-space: nowrap;
 }
 
 .post-row span {
+  display: block;
   font-size: 1.18rem;
   line-height: 1.22;
+  text-wrap: balance;
 }
 
 .page,
@@ -344,13 +372,21 @@ a:hover {
     padding-top: 0;
   }
 
+  .post-sections {
+    gap: 2.8rem;
+  }
+
+  .post-section h1 {
+    margin-bottom: 1rem;
+    font-size: 0.88rem;
+  }
+
   .post-list {
     gap: 1.7rem;
   }
 
   .post-row {
-    grid-template-columns: 1fr;
-    gap: 0.25rem;
+    gap: 0.32rem;
   }
 
   .post-row span {

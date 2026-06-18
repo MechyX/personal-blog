@@ -1,19 +1,17 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { formatPostDate, getPostSlug, getPublishedPosts } from "../lib/posts";
-import { relativeHref } from "../lib/url";
+import PostList from "../components/PostList.astro";
+import { getPublishedPosts } from "../lib/posts";
+import { postSections } from "../lib/postSections";
 
 const posts = await getPublishedPosts();
 const pathname = Astro.url.pathname;
+const defaultSection = postSections[0];
+const sectionPosts = posts.filter((post) => post.data.section === defaultSection.id);
 ---
 
 <BaseLayout>
-  <section class="post-list" aria-label="posts">
-    {posts.map((post) => (
-      <a class="post-row" href={relativeHref(pathname, `/posts/${getPostSlug(post.id)}/`)}>
-        <time datetime={post.data.pubDate.toISOString()}>{formatPostDate(post.data.pubDate)}</time>
-        <span>{post.data.title}</span>
-      </a>
-    ))}
+  <section class="post-section" aria-label={`${defaultSection.title} posts`}>
+    <PostList posts={sectionPosts} pathname={pathname} />
   </section>
 </BaseLayout>

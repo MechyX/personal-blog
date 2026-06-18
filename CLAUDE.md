@@ -12,3 +12,4 @@ Do not open a pull request for new changes until the user explicitly says to ope
 
 - Make local code/content changes as requested
 - Do not push branches or trigger deployment without explicit permission
+- When making local site changes, start a dev server and share the local URL so the user can review changes live

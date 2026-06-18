@@ -8,6 +8,7 @@ const posts = defineCollection({
     title: z.string(),
     description: z.string(),
     pubDate: z.coerce.date(),
+    section: z.enum(["software", "other"]),
     draft: z.boolean().default(false),
     image: z.string().optional()
   })
