@@ -2,7 +2,7 @@
 title: "The Good Part About Vijay Winning Tamil Nadu's Election"
 description: "How a surprising electoral outcome may have sparked critical thinking and democratic engagement."
 pubDate: 2026-06-18
-section: other
+section: not-tech
 ---
 
 Before I start, I don't favor any parties, and I am not a perfectly logical person in my decisions either.
