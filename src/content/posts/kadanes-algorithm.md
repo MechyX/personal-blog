@@ -234,14 +234,15 @@ $O(n)$ solution on the spot.
     font-size: 0.84rem;
   }
 
-  .kadane-reset {
+  .kadane-controls .kadane-reset {
     width: auto;
     height: auto;
     margin-left: 0.2rem;
-    padding: 0 0 0.06rem;
-    border-bottom: 1px solid var(--kadane-line);
-    font-size: 0.76rem;
-    line-height: 1.1;
+    padding: 0;
+    border-bottom: 0;
+    color: var(--soft-muted);
+    font-size: 0.84rem;
+    line-height: 1;
   }
 
   @media (max-width: 620px) {
