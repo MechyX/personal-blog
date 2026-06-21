@@ -235,10 +235,13 @@ $O(n)$ solution on the spot.
   }
 
   .kadane-reset {
-    margin-left: 0.35rem;
-    padding: 0 0 0.12rem;
+    width: auto;
+    height: auto;
+    margin-left: 0.2rem;
+    padding: 0 0 0.06rem;
     border-bottom: 1px solid var(--kadane-line);
-    font-size: 0.84rem;
+    font-size: 0.76rem;
+    line-height: 1.1;
   }
 
   @media (max-width: 620px) {
